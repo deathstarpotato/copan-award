@@ -33,14 +33,11 @@ const IMAGES = [
 ];
 
 const INITIAL_PARTICIPANTS = [
-  { name: "dep1", odds: 1 },
-  { name: "dep2", odds: 1 },
-  { name: "dep3", odds: 1 },
-  { name: "dep4", odds: 1 },
-  { name: "dep5", odds: 1 },
-  { name: "dep6", odds: 1 },
-  { name: "dep7", odds: 1 },
-  { name: "dep8", odds: 1 }
+  { name: "Production", odds: 1 },
+  { name: "Warehouse", odds: 1 },
+  { name: "Quality", odds: 1 },
+  { name: "Lab", odds: 1 },
+  { name: "IT", odds: 1 }
 ];
 
 export default function App() {
@@ -199,10 +196,10 @@ export default function App() {
         <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
           <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 tracking-tight drop-shadow-sm mb-2 flex items-center gap-3">
             <Trophy className="text-amber-400 w-8 h-8 md:w-12 md:h-12" />
-            Copan Award
+            Building Together Award
           </h1>
           <p className="text-slate-300 text-lg md:text-xl font-medium tracking-wide">
-            Building Together Excellence
+            We did this together
           </p>
         </div>
       </div>
@@ -278,7 +275,7 @@ export default function App() {
               </h1>
             </div>
             <p className="text-slate-400 text-sm sm:text-lg max-w-md mx-auto mt-2 sm:mt-4">
-              You are the recipient of the Copan "Building Together" Award! Please come forward to claim your prize.
+              Your Department won the Copan "Building Together" Award!
             </p>
 
             <button 
