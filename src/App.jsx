@@ -26,10 +26,10 @@ try {
 
 // --- Configuration ---
 const IMAGES = [
-  "Media (8).jpg",
-  "Media (9).jpg",
-  "Media (10).jpg",
-  "Media (11).jpg"
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg"
 ];
 
 const INITIAL_PARTICIPANTS = [
