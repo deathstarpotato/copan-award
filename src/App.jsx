@@ -205,7 +205,7 @@ export default function App() {
             </h1>
           </div>
           <p className="text-slate-300 text-sm sm:text-base md:text-xl font-medium tracking-wide ml-9 sm:ml-11 md:ml-15 mt-1 md:mt-2">
-            We did this together
+            Brought to you by <a href="https://techlacaze.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline pointer-events-auto transition-colors">techlacaze.com</a>
           </p>
         </div>
       </div>
