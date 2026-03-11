@@ -178,34 +178,40 @@ export default function App() {
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row overflow-hidden font-sans border-4 border-amber-500/50">
       
       {/* LEFT PANEL - Slideshow */}
-      <div className="w-full md:flex-1 h-[40vh] md:h-screen relative shadow-2xl z-10 bg-black flex items-center justify-center border-b-2 md:border-b-0 md:border-r-2 border-amber-500/30">
-        {IMAGES.map((img, index) => (
-          <img
-            key={img}
-            src={img}
-            alt={`Copan Award View ${index + 1}`}
-            className={`absolute inset-0 w-full h-full object-contain p-4 md:p-8 transition-opacity duration-1000 ease-in-out ${
-              index === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-            }`}
-          />
-        ))}
-        {/* Subtle overlay gradient to blend with the dark theme */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50 md:bg-gradient-to-r md:from-transparent md:to-slate-950 pointer-events-none" />
+      <div className="w-full md:flex-1 h-[45vh] sm:h-[50vh] md:h-screen flex flex-col relative shadow-2xl z-10 bg-black border-b-2 md:border-b-0 md:border-r-2 border-amber-500/30">
+        
+        {/* Slideshow Image Area */}
+        <div className="relative flex-1 w-full overflow-hidden flex items-center justify-center">
+          {IMAGES.map((img, index) => (
+            <img
+              key={img}
+              src={img}
+              alt={`Copan Award View ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-contain p-4 md:p-8 transition-opacity duration-1000 ease-in-out ${
+                index === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+              }`}
+            />
+          ))}
+          {/* Subtle overlay gradient to blend with the dark theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-950 pointer-events-none" />
+        </div>
         
         {/* Permanent Titles on the slideshow side */}
-        <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 tracking-tight drop-shadow-sm mb-2 flex items-center gap-3">
-            <Trophy className="text-amber-400 w-8 h-8 md:w-12 md:h-12" />
-            Building Together Award
-          </h1>
-          <p className="text-slate-300 text-lg md:text-xl font-medium tracking-wide">
+        <div className="w-full p-4 sm:p-6 md:absolute md:bottom-8 md:left-8 md:p-0 z-20 pointer-events-none bg-gradient-to-t from-slate-950 to-transparent md:bg-none shrink-0">
+          <div className="flex items-center gap-2 md:gap-3">
+            <Trophy className="text-amber-400 w-7 h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 shrink-0" />
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 tracking-tight drop-shadow-sm pb-1 md:pb-2 leading-tight">
+              Building Together Award
+            </h1>
+          </div>
+          <p className="text-slate-300 text-sm sm:text-base md:text-xl font-medium tracking-wide ml-9 sm:ml-11 md:ml-15 mt-1 md:mt-2">
             We did this together
           </p>
         </div>
       </div>
 
       {/* RIGHT PANEL - Content Area */}
-      <div className="w-full md:flex-1 h-[60vh] md:h-screen flex flex-col items-center justify-center relative p-4 sm:p-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
+      <div className="w-full md:flex-1 flex-1 min-h-[55vh] md:min-h-0 md:h-screen flex flex-col items-center justify-center relative p-4 sm:p-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')]">
         
         {/* Background glow effects */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -230,6 +236,32 @@ export default function App() {
             <TimeUnit value={minutes} label="Minutes" />
             <span className="text-3xl sm:text-4xl md:text-6xl font-light text-amber-500/50 mt-3 md:mt-2">:</span>
             <TimeUnit value={seconds} label="Seconds" highlight />
+          </div>
+
+          {/* --- NEW: CONTESTANTS LIST --- */}
+          <div className="mt-12 sm:mt-16 w-full max-w-2xl flex flex-col items-center">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <Star className="w-4 h-4 text-amber-500/70" />
+              <h3 className="text-xs sm:text-sm text-amber-500/70 uppercase tracking-widest font-semibold">
+                Contestants
+              </h3>
+              <Star className="w-4 h-4 text-amber-500/70" />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-2 sm:px-4 max-h-[25vh] overflow-y-auto w-full pb-4">
+              {participants.map((p, i) => (
+                <div 
+                  key={i} 
+                  className="bg-slate-800/80 border border-slate-700 text-slate-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium shadow-lg backdrop-blur-sm"
+                >
+                  {p.name}
+                </div>
+              ))}
+              
+              {participants.length === 0 && (
+                 <span className="text-slate-500 italic text-sm">No contestants found.</span>
+              )}
+            </div>
           </div>
         </div>
 
